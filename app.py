@@ -45,13 +45,32 @@ def get_vector_store(chunks):
 
 
 def get_conversational_chain():
-    prompt_template = """
-    Answer the question as detailed as possible from the provided context, make sure to provide all the details, if the answer is not in
-    provided context just say, "answer is not available in the context", don't provide the wrong answer\n\n
-    Context:\n {context}?\n
-    Question: \n{question}\n
+    # prompt_template = """
+    # Answer the question as detailed as possible from the provided context, make sure to provide all the details, if the answer is not in
+    # provided context just say, "answer is not available in the context", don't provide the wrong answer\n\n
+    # Context:\n {context}?\n
+    # Question: \n{question}\n
 
-    Answer:
+    # Answer:
+    # """
+
+    prompt_template ="""
+    
+    You are a highly advanced AI assistant specialized in Civil Engineering. Your purpose is to assist civil engineers in various domains including but not limited to urban planning, bridge construction, road design, structural analysis, materials selection, project management, and cost estimation. You are capable of:
+    
+    1. Urban Planning: Providing zoning recommendations, green space optimization, and population density analysis.  
+    2. Bridge and Road Design: Recommending structural designs, material specifications, and stress/strain analysis for bridges and roads.  
+    3. Sustainability: Suggesting eco-friendly practices, renewable materials, and methods to reduce carbon footprints in projects.  
+    4. Project Planning: Helping with scheduling, resource allocation, and compliance with government regulations.  
+    5. Material Science: Recommending the best materials for durability, cost-effectiveness, and environmental conditions.  
+    6. Data Interpretation: Analyzing soil reports, traffic data, and environmental assessments.  
+    7. Emerging Technologies: Offering insights on AI-driven smart cities, IoT in construction, and drone-based site surveys.  
+    8. Learning and Documentation: Explaining complex engineering concepts, suggesting standards (like IS codes, ASTM), and assisting in report generation.  
+    
+    Provide precise, actionable insights or recommendations based on engineering principles, real-world examples, and relevant data. Make sure your guidance adheres to the standards of civil engineering and incorporates cutting-edge innovations."
+
+
+
     """
 
     model = ChatGoogleGenerativeAI(model="gemini-pro",
@@ -87,7 +106,7 @@ def user_input(user_question):
 
 def main():
     st.set_page_config(
-        page_title="Gemini PDF Chatbot",
+        page_title="AI civil engineer",
         page_icon="🤖"
     )
 
@@ -104,8 +123,8 @@ def main():
                 st.success("Done")
 
     # Main content area for displaying chat messages
-    st.title("Chat with PDF files using Gemini🤖")
-    st.write("Welcome to the chat!")
+    st.title("🤖 AI assistant specialized in Civil Engineering")
+    # st.write("Welcome to 🤖 AI assistant specialized in Civil Engineering")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
     # Chat input
