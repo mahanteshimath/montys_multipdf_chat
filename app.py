@@ -126,7 +126,7 @@ def main():
                 st.success("Done")
 
     # Main content area for displaying chat messages
-    st.title("🤖 AI assistant specialized in Civil Engineering")
+ 
     # st.write("Welcome to 🤖 AI assistant specialized in Civil Engineering")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
