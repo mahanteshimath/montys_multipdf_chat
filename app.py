@@ -69,7 +69,10 @@ def get_conversational_chain():
     
     Provide precise, actionable insights or recommendations based on engineering principles, real-world examples, and relevant data. Make sure your guidance adheres to the standards of civil engineering and incorporates cutting-edge innovations."
 
+    Context:\n {context}?\n
+    Question: \n{question}\n
 
+    # Answer:
 
     """
 
